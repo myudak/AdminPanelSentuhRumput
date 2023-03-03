@@ -1,0 +1,289 @@
+.red {
+  color: red;
+}
+
+.navcontainer {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+  background-color: #2e323a;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.wrapper {
+  color: white;
+  padding: 10px;
+  z-index: 1;
+}
+.logo {
+  color: white;
+  padding: 10px;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wrapper > ul {
+  margin-top: 20px;
+  text-align: left;
+  padding-left: 10px;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wrapper > ul > li {
+  list-style: none;
+  font-size: 20px;
+  text-decoration: none;
+  opacity: 0.6;
+}
+/* .wrapper > ul > li:active {
+  color: #000;
+} */
+
+.wrapper > ul > li > a:hover,
+.wrapper > ul > li:hover,
+.wrapper > ul > li > a:active {
+  color: #57cc99;
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .navcontainer {
+    width: 70px;
+  }
+  .logo > h2 {
+    opacity: 0;
+  }
+  .logo {
+    background: url("../public/logo.png");
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .wrapper > ul {
+    gap: 5px;
+  }
+  .wrapper > ul > li:hover {
+    color: red;
+  }
+  .wrapper > ul > li > a {
+    opacity: 0;
+  }
+}
+
+/* header css starts  */
+
+.headcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-left: 200px;
+  /* z-index: -1; */
+}
+.headwrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.title {
+  margin-left: 40px;
+}
+.title > h2 {
+  color: rgb(0, 0, 0);
+}
+.title > p {
+  color: rgb(0, 0, 0);
+}
+.title > h2 > span {
+  color: #57cc99;
+}
+.profile {
+  position: absolute;
+  right: 20px;
+}
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .headcontainer {
+    width: 100%;
+    margin-left: 70px;
+  }
+  .profile {
+    position: absolute;
+    right: 0px;
+  }
+}
+/* 
+content of dashboard start */
+
+.contentcontainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 200px;
+}
+
+.contentwrapper {
+  display: flex;
+  padding: 20px;
+  gap: 40px;
+}
+.tabs {
+  border: solid #37a3a5;
+  margin: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 250px;
+  height: 100px;
+  background-color: #57cc99;
+  border-radius: 10px;
+  cursor: pointer;
+  /* -webkit-box-shadow: 3px 0px 6px 0px rgba(14, 13, 13, 0.75); */
+  /* box-shadow: 4px 2px 9px 0px rgb(14 13 13 / 75%); */
+}
+
+.categories > h2 {
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .contentcontainer {
+    margin-left: 70px;
+  }
+  .contentwrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .tabs {
+    width: 350px;
+  }
+}
+/* 
+charts css started  */
+
+.charts {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
+}
+.bar {
+  margin-left: 20px;
+}
+
+.circle {
+  margin-left: 120px;
+}
+
+@media only screen and (max-width: 768px) {
+  .charts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .bar > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .circle > h2 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .bar {
+    margin-top: 60px;
+    margin-left: 10px;
+    width: 300px;
+    height: 300px;
+  }
+  .circle {
+    margin-top: 60px;
+    margin-left: 10px;
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.listusers {
+  padding: 20px;
+  /* display: flex;
+  justify-content: center; */
+  align-items: center;
+}
+.listusers > h2 {
+  padding: 20px;
+}
+
+.table {
+  border: 2px solid forestgreen;
+  width: 800px;
+  height: 200px;
+}
+.table > tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table > tr > td:nth-child(4) :hover {
+  color: red;
+}
+
+.table > tr > th {
+  border-bottom: 1px solid black;
+}
+
+.table > tr > td {
+  text-align: center;
+}
+
+.tableFooter {
+  background-color: #f1f1f1;
+  padding: 8px 0px;
+  width: 100%;
+  font-weight: 500;
+  text-align: left;
+  font-size: 16px;
+  color: #2c3e50;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.activeButton {
+  color: white;
+  background: #57cc99;
+}
+
+.inactiveButton {
+  color: #2c3e50;
+  background: #f9f9f9;
+}

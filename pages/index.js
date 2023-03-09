@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ContentHome from "./components/ContentHome";
+import ContentHome from "./components/Content/ContentHome";
 import Header from "./components/Header";
 import LeftNavbar from "./components/LeftNavbar";
 

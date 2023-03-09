@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ContentSubmisi from "./components/ContentSubmisi.js";
+import ContentSubmisi from "./components/Content/ContentSubmisi.js";
 import Header from "./components/Header";
 import LeftNavbar from "./components/LeftNavbar";
 

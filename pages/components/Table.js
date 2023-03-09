@@ -6,28 +6,50 @@ import TableFooter from "./TableFooter.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
+import { doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { db } from "../lib/firebaseConfig";
+
 const Table = ({
   data,
   rowsPerPage,
-  namedkk = ["Nama", "Email", "Location"],
+  tHeader = ["Nama", "Email", "Location"],
+  tContent = [],
+  docName = "users",
 }) => {
+  const [dataId, setDataId] = useState("");
+  const handleDelete = async (idData) => {
+    const taskDocRef = doc(db, docName, idData);
+    try {
+      await deleteDoc(taskDocRef);
+    } catch (err) {
+      alert(err);
+    }
+  };
+
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
   return (
     <>
       <table className={styles.table}>
         <tr>
-          <th className={styles.tableHeader}>{namedkk[0]}</th>
-          <th className={styles.tableHeader}>{namedkk[1]}</th>
-          <th className={styles.tableHeader}>{namedkk[2]}</th>
+          <th className={styles.tableHeader}>{tHeader[0]}</th>
+          <th className={styles.tableHeader}>{tHeader[1]}</th>
+          <th className={styles.tableHeader}>{tHeader[2]}</th>
+          <th className={styles.tableHeader}>{tHeader[3]}</th>
+          <th className={styles.tableHeader}>{tHeader[4]}</th>
+          <th className={styles.tableHeader}>{tHeader[5]}</th>
           <th className={styles.tableHeader}>Actions</th>
         </tr>
         {slice.map((el) => (
           <tr className={styles.tableRowItems}>
-            <td className={styles.tableCell}>{el.name}</td>
-            <td className={styles.tableCell}>{el.Email}</td>
-            <td className={styles.tableCell}>{el.Location}</td>
-            <td>
+            <td className={styles.tableCell}>{1}</td>
+            <td className={styles.tableCell}>{el.data[tContent[0]]}</td>
+            <td className={styles.tableCell}>{el.data[tContent[1]]}</td>
+            <td className={styles.tableCell}>{el.data[tContent[2]]}</td>
+            {/* susah ngurus date */}
+            <td className={styles.tableCell}>{el.data[tContent[3]].seconds}</td>
+            <td className={styles.tableCell}>{el.data[tContent[4]]}</td>
+            <td onClick={(e) => handleDelete(el.id)(e)}>
               <FontAwesomeIcon
                 icon={faTrash}
                 style={{ width: "18px", cursor: "pointer" }}

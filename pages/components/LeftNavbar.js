@@ -4,9 +4,8 @@ import styles from "../../styles/Home.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faImage,
-  faCog,
-  faHeadphones,
-  faNewspaper,
+  faLocationArrow,
+  faBell,
   faFlag,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
@@ -25,16 +24,26 @@ function LeftNavbar() {
               style={{ width: "18px", cursor: "pointer" }}
             />{" "}
             <a href="/" shallow={true}>
-              Pengguna{" "}
+              Users{" "}
             </a>
           </li>
           <li>
             <FontAwesomeIcon
-              icon={faNewspaper}
+              icon={faFlag}
               style={{ width: "18px", cursor: "pointer" }}
             />{" "}
-            <Link href="/artikel" shallow={true}>
-              Artikel
+            <Link href="/laporan" shallow={true}>
+              Laporan
+            </Link>
+            {/* <a href="/artikel">Artikel</a> */}
+          </li>
+          <li>
+            <FontAwesomeIcon
+              icon={faLocationArrow}
+              style={{ width: "18px", cursor: "pointer" }}
+            />{" "}
+            <Link href="/submisi" shallow={true}>
+              Submisi
             </Link>
             {/* <a href="/artikel">Artikel</a> */}
           </li>
@@ -43,30 +52,18 @@ function LeftNavbar() {
               icon={faImage}
               style={{ width: "18px", cursor: "pointer" }}
             />{" "}
-            <Link href="/gambar" shallow={true}>
-              Galeri
+            <Link href="/lokasi" shallow={true}>
+              Lokasi
             </Link>
           </li>
           <li>
             <FontAwesomeIcon
-              icon={faHeadphones}
+              icon={faBell}
               style={{ width: "18px", cursor: "pointer" }}
             />{" "}
-            <Link href="/audio">Audio</Link>
-          </li>
-          <li>
-            <FontAwesomeIcon
-              icon={faCog}
-              style={{ width: "18px", cursor: "pointer" }}
-            />{" "}
-            <Link href="/submisi"> Submisi</Link>
-          </li>
-          <li>
-            <FontAwesomeIcon
-              icon={faFlag}
-              style={{ width: "18px", cursor: "pointer" }}
-            />{" "}
-            <Link href="/pelaporan">Pelaporan</Link>
+            <Link href="/notifications" shallow={true}>
+              Notifications
+            </Link>
           </li>
         </ul>
       </div>

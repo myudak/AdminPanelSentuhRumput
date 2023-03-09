@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ContentAudio from "./components/ContentAudio";
+import ContentPelaporan from "./components/Content/ContentLaporan";
 import Header from "./components/Header";
 import LeftNavbar from "./components/LeftNavbar";
 
@@ -8,14 +8,14 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>AUDIO | DASHBOARD</title>
-        <meta name="description" content="Sandbox Admin | Audio" />
+        <title>PELAPORAN | DASHBOARD</title>
+        <meta name="description" content="Sandbox Admin | Lokasi" />
         <link rel="icon" href="/SandboxSmall.ico" />
       </Head>
       <div className={styles.container}>
         <LeftNavbar />
-        <Header name="Audio" />
-        <ContentAudio />
+        <Header name="Pelaporan" />
+        <ContentPelaporan />
       </div>
     </div>
   );

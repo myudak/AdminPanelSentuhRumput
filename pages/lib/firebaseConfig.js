@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyARiDWnQe81DYFRR5Nof6tNVZ0xyEMvPxI",
+  apiKey: process.env.apiKey,
   authDomain: "sentuh-rumput.firebaseapp.com",
   projectId: "sentuh-rumput",
   storageBucket: "sentuh-rumput.appspot.com",

@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import ContentPelaporan from "./components/Content/ContentLaporan";
+import ContentLokasi from "./components/Content/ContentLokasi";
 import Header from "./components/Header";
 import LeftNavbar from "./components/LeftNavbar";
 
@@ -14,8 +14,8 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <LeftNavbar />
-        <Header name="Pelaporan" />
-        <ContentPelaporan />
+        <Header name="Lokasi" />
+        <ContentLokasi />
       </div>
     </div>
   );

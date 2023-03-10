@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../../styles/Home.module.css";
-import Table from "../TableSubmisi";
+import Table from "../TableLokasi";
 
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "../../lib/firebaseConfig";
 
-function ContentGambar() {
+function ContentLokasi() {
   const [dataUser, setDataUser] = useState([]);
 
   /* function to get all tasks from firestore in realtime */
   useEffect(() => {
-    const q = query(collection(db, "submissions"));
+    const q = query(collection(db, "locations"));
     onSnapshot(q, (querySnapshot) => {
       setDataUser(
         querySnapshot.docs.map((doc) => ({
@@ -23,26 +23,27 @@ function ContentGambar() {
 
   return (
     <div className={styles.contentcontainer}>
+      {console.log(dataUser)}
       {/* 
-     5. Submisi
-Crud submisi lokasi dari user
-    */}
+      6. Pelaporan Crud pelaporan
+        */}
 
-      {/* Crud Submisi lokasi user */}
+      {/* CRUD PELAPORAN*/}
       <div className={styles.listusers}>
-        <h2>Lokasi User</h2>
+        <h2>Laporan User</h2>
         <Table
-          docName="submissions"
+          docName="locations"
           data={dataUser}
           tHeader={[
-            "Id",
+            "ID",
             "Author Email",
             "Name",
             "Image",
             "Description",
             "Coordinates",
+            "Review",
+            "Rating",
             "Date Created",
-            "Action",
           ]}
           tContent={[
             "id",
@@ -51,6 +52,8 @@ Crud submisi lokasi dari user
             "image",
             "description",
             "coordinates",
+            "review",
+            "daring",
             "dateCreated",
           ]}
           rowsPerPage={2}
@@ -60,4 +63,4 @@ Crud submisi lokasi dari user
   );
 }
 
-export default ContentGambar;
+export default ContentLokasi;

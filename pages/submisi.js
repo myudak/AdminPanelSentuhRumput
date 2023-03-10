@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <LeftNavbar />
-        <Header name="Home" />
+        <Header name="Submission" />
         <ContentSubmisi />
       </div>
     </div>

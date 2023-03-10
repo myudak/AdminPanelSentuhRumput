@@ -17,6 +17,7 @@ const sliceData = (data, page, rowsPerPage) => {
 const useTable = (data, page, rowsPerPage) => {
   const [tableRange, setTableRange] = useState([]);
   const [slice, setSlice] = useState([]);
+  const angka = [];
 
   useEffect(() => {
     const range = calculateRange(data, rowsPerPage);
@@ -25,6 +26,11 @@ const useTable = (data, page, rowsPerPage) => {
     const slice = sliceData(data, page, rowsPerPage);
     setSlice([...slice]);
   }, [data, setTableRange, page, setSlice]);
+
+  // nomor
+  for (let i = 0; i < slice.length; i++) {
+    angka.push(i);
+  }
 
   return { slice, range: tableRange };
 };

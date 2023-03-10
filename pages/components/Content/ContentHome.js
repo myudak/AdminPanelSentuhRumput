@@ -13,10 +13,18 @@ function Content() {
     const q = query(collection(db, "users"), orderBy("name"));
     onSnapshot(q, (querySnapshot) => {
       setDataUser(
-        querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
+        querySnapshot.docs
+          .filter((doc) => {
+            console.log(doc.id);
+            if (doc.id == "admin@sentuhrumput.id") {
+              return false;
+            }
+            return true;
+          })
+          .map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
       );
     });
   }, []);

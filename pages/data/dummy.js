@@ -1,3 +1,5 @@
+// dummy data
+
 const dataDonut = {
   labels: ["Organic", "Social Media", "Websites"],
   datasets: [

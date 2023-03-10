@@ -16,7 +16,6 @@ const Table = ({
   tContent = [],
   docName = "users",
 }) => {
-  const [dataId, setDataId] = useState("");
   const handleDelete = async (idData) => {
     const taskDocRef = doc(db, docName, idData);
     try {
@@ -32,12 +31,14 @@ const Table = ({
     <>
       <table className={styles.table}>
         <tr>
+          <th className={styles.tableHeader}>No</th>
           <th className={styles.tableHeader}>{tHeader[0]}</th>
           <th className={styles.tableHeader}>{tHeader[1]}</th>
           <th className={styles.tableHeader}>{tHeader[2]}</th>
           <th className={styles.tableHeader}>{tHeader[3]}</th>
           <th className={styles.tableHeader}>{tHeader[4]}</th>
           <th className={styles.tableHeader}>{tHeader[5]}</th>
+          <th className={styles.tableHeader}>{tHeader[6]}</th>
           <th className={styles.tableHeader}>Actions</th>
         </tr>
         {slice.map((el, index) => (
@@ -46,14 +47,18 @@ const Table = ({
             <td className={styles.tableCell}>{el.data[tContent[0]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[1]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[2]]}</td>
+            <td className={styles.tableCell}>{el.data[tContent[3]]}</td>
+            <td className={styles.tableCell}>{el.data[tContent[4]]}</td>
+            <td className={styles.tableCell}>{el.data[tContent[5]]}</td>
             {/* susah ngurus date */}
 
             <td className={styles.tableCell}>
               {new Date(
-                el.data[tContent[3]].seconds * 1000
+                el.data[tContent[6]].seconds * 1000
               ).toLocaleDateString()}
             </td>
-            <td className={styles.tableCell}>{el.data[tContent[4]]}</td>
+
+            {/* TODO : Actionnya “approve”, “reject” sama “open location” */}
             <td onClick={(e) => handleDelete(el.id)(e)}>
               <FontAwesomeIcon
                 icon={faTrash}

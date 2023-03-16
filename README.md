@@ -1,29 +1,79 @@
-# SENTUH RUMPUT ADMIN PANEL
-![image](https://user-images.githubusercontent.com/69108782/222672777-e93e490e-0c50-47b6-9b35-7c2234591922.png)
+# Sentuh Rumput Admin Panel
 
+Sentuh Rumput is a solution developed as a media for people to find a green open space for the use of space that can increase the quality of health in physically and mentally.
 
-## Getting Started
+# Features
 
-run the development server:
+highlight some key essentials of the admin panel features such as:
+
+- CRUD Users
+- CRUD Reports
+- CRUD Submisi
+- CRUD Submissions
+- Send Notifications
+
+# Demo
+
+https://www.youtube.com/watch?v=HhgJs9lOf6Q
+
+# Proposals
+
+Read more about our proposal here: https://s.id/sentuh-rumput
+
+# Main App repository
+
+https://github.com/snowfluke/sentuh-rumput
+
+# Installation
+
+## General requirement
+
+Software that needed:
+
+- Node.js v16.16.0
+  Download: https://nodejs.org/en/blog/release/v16.16.0/
+
+Assuming Node.js already installed, check the version in terminal/cmd with the command:
 
 ```bash
-npm install
-# or
+node --version
+```
+
+Installing package manager `yarn` with command:
+
+```bash
+npm i -g yarn
+```
+
+Install packages with `yarn `
+
+```bash
 yarn install
-;
-npm run dev
-# or
+```
+
+`yarn` run with development server
+
+```bash
 yarn dev
 ```
-Open [http://localhost:3000](http://localhost:3000)
 
-## Learn More
-To learn more about Next.js, take a look at the following resources:
+# Credentials
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You need to manually provide these 1 files
 
+1. firebaseConfig.js
 
-## Deploy on Vercel [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
+Location to put: `pages\lib\firebaseConfig.js`. This file is required for the api-key. The content of the file is as follow:
 
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```js
+const firebaseConfig = {
+  apiKey: "AIza******************",
+  authDomain: "sentuh-rumput.firebaseapp.com",
+  projectId: "sentuh-rumput",
+  storageBucket: "sentuh-rumput.appspot.com",
+  messagingSenderId: "684957327996",
+  appId: "1:684957327996:web:d56ae70a610a57cd2d9ff9",
+};
+```
+
+You can find the api-key in Firebase Console -> Project Settings

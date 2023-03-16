@@ -23,7 +23,7 @@ function LeftNavbar() {
               icon={faUser}
               style={{ width: "18px", cursor: "pointer" }}
             />{" "}
-            <a href="/" shallow={true}>
+            <a href="/users" shallow={true}>
               Users{" "}
             </a>
           </li>

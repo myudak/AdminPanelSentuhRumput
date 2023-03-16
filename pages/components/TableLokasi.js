@@ -51,7 +51,9 @@ const Table = ({
             <td className={styles.tableCell}>{el.data[tContent[2]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[3]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[4]]}</td>
-            <td className={styles.tableCell}>{el.data[tContent[5]]}</td>
+            <td className={styles.tableCell}>{`Longitude : ${
+              el.data[tContent[5]].longitude
+            } latitude : ${el.data[tContent[5]].longitude}`}</td>
             <td className={styles.tableCell}>{el.data[tContent[6]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[7]]}</td>
             {/* susah ngurus date */}
@@ -63,11 +65,16 @@ const Table = ({
             </td>
 
             {/* TODO : Actionnya delete, edit, add, open in gmaps */}
-            <td onClick={(e) => handleDelete(el.id)(e)}>
-              <FontAwesomeIcon
-                icon={faTrash}
-                style={{ width: "18px", cursor: "pointer" }}
-              />{" "}
+            <td>
+              <button
+                className={styles.buttonActions}
+                onClick={(e) => handleDelete(el.id)}
+              >
+                Delete
+              </button>
+              <button className={styles.buttonActions}>Edit</button>
+              <button className={styles.buttonActions}>Add</button>
+              <button className={styles.buttonActions}>Open Location</button>
             </td>
           </tr>
         ))}

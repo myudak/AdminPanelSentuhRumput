@@ -16,14 +16,14 @@ const Table = ({
   tContent = [],
   docName = "users",
 }) => {
-  const handleDelete = async (idData) => {
-    const taskDocRef = doc(db, docName, idData);
-    try {
-      await deleteDoc(taskDocRef);
-    } catch (err) {
-      alert(err);
-    }
-  };
+  // const handleDelete = async (idData) => {
+  //   const taskDocRef = doc(db, docName, idData);
+  //   try {
+  //     await deleteDoc(taskDocRef);
+  //   } catch (err) {
+  //     alert(err);
+  //   }
+  // };
 
   const [page, setPage] = useState(1);
   const { slice, range } = useTable(data, page, rowsPerPage);
@@ -43,13 +43,16 @@ const Table = ({
         </tr>
         {slice.map((el, index) => (
           <tr className={styles.tableRowItems}>
+            {console.log(el.data)}
             <td className={styles.tableCell}>{index + 1}</td>
             <td className={styles.tableCell}>{el.data[tContent[0]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[1]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[2]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[3]]}</td>
             <td className={styles.tableCell}>{el.data[tContent[4]]}</td>
-            <td className={styles.tableCell}>{el.data[tContent[5]]}</td>
+            <td className={styles.tableCell}>
+              {el.data[tContent[5]].longitude}
+            </td>
             {/* susah ngurus date */}
 
             <td className={styles.tableCell}>
@@ -59,11 +62,10 @@ const Table = ({
             </td>
 
             {/* TODO : Actionnya “approve”, “reject” sama “open location” */}
-            <td onClick={(e) => handleDelete(el.id)(e)}>
-              <FontAwesomeIcon
-                icon={faTrash}
-                style={{ width: "18px", cursor: "pointer" }}
-              />{" "}
+            <td>
+              <button className={styles.buttonActions}>Approve</button>
+              <button className={styles.buttonActions}>Reject</button>
+              <button className={styles.buttonActions}>Open Location</button>
             </td>
           </tr>
         ))}

@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_API_KEY,
+  apiKey: "",
   authDomain: "sentuh-rumput.firebaseapp.com",
   projectId: "sentuh-rumput",
   storageBucket: "sentuh-rumput.appspot.com",

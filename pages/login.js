@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
 import { auth } from "./lib/firebaseConfig";
 import {
   GoogleAuthProvider,
@@ -11,6 +12,7 @@ import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { db } from "./lib/firebaseConfig";
 
 function login() {
+  const router = useRouter();
   const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,6 +22,7 @@ function login() {
 
     if (email == "myudak@sentuhrumput.com" && password == "password") {
       console.log("masuk");
+      router.push("/");
       setError(false);
     } else {
       setError(true);

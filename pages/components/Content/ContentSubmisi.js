@@ -30,6 +30,7 @@ Crud submisi lokasi dari user
 
       {/* Crud Submisi lokasi user */}
       <div className={styles.listusers}>
+        {console.log(dataUser)}
         <h2>Lokasi User</h2>
         <Table
           docName="submissions"
